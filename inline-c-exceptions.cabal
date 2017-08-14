@@ -34,5 +34,4 @@ test-suite test
                        HUnit,
                        safe-exceptions
   ghc-options:         -Wall
-  c-sources:           test/Test.cpp
   extra-libraries:     stdc++
