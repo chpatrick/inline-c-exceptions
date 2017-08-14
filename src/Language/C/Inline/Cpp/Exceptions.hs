@@ -47,6 +47,10 @@ catchBlock = QuasiQuoter
             , "    char* message = static_cast<char*>(std::malloc(whatLen));"
             , "    std::memcpy(message, e.what(), whatLen);"
             , "    *$(const char** " ++ nameBase errPtrVarName ++") = message;"
+            , "  } catch (...) {"
+            , "    char* message = static_cast<char*>(std::malloc(1));"
+            , "    *message = 0;"
+            , "    *$(const char** " ++ nameBase errPtrVarName ++") = message;"
             , "  }"
             , "}"
             ]
