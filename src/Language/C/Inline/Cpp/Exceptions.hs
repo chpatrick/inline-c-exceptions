@@ -2,7 +2,6 @@
 
 module Language.C.Inline.Cpp.Exceptions
   ( ForeignException(..)
-  , handleForeign
   , catchBlock
   , catchExp
   ) where
