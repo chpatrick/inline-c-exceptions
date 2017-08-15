@@ -3,7 +3,6 @@
 module Language.C.Inline.Cpp.Exceptions
   ( ForeignException(..)
   , catchBlock
-  , catchExp
   ) where
 
 import           Control.Exception.Safe
@@ -60,6 +59,3 @@ catchBlock = QuasiQuoter
   , quoteDec = unsupported
   } where
       unsupported _ = fail "Unsupported quasiquotation."
-
-catchExp :: QuasiQuoter
-catchExp = catchBlock { quoteExp = \str -> quoteExp catchBlock (str ++ ";") }
